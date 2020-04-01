@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Simple Math Exercises</title>
+		<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+		<style>
+			/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+			html, body, div, span, applet, object, iframe,
+			h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+			a, abbr, acronym, address, big, cite, code,
+			del, dfn, em, img, ins, kbd, q, s, samp,
+			small, strike, strong, sub, sup, tt, var,
+			b, u, i, center,
+			dl, dt, dd, ol, ul, li,
+			fieldset, form, label, legend,
+			table, caption, tbody, tfoot, thead, tr, th, td,
+			article, aside, canvas, details, embed,
+			figure, figcaption, footer, header, hgroup,
+			menu, nav, output, ruby, section, summary,
+			time, mark, audio, video {
+				margin: 0;
+				padding: 0;
+				border: 0;
+				font-size: 100%;
+				font: inherit;
+				vertical-align: baseline;
+			}
+
+			/* HTML5 display-role reset for older browsers */
+			article, aside, details, figcaption, figure,
+			footer, header, hgroup, menu, nav, section {
+				display: block;
+			}
+
+			body {
+				line-height: 1;
+			}
+
+			ol, ul {
+				list-style: none;
+			}
+
+			blockquote, q {
+				quotes: none;
+			}
+
+			blockquote:before, blockquote:after,
+			q:before, q:after {
+				content: '';
+				content: none;
+			}
+
+			table {
+				border-collapse: collapse;
+				border-spacing: 0;
+			}
+
+			/** customisation **/
+
+			body {
+				padding:20px;
+				text-align: center;
+				background: #041a04;
+			}
+
+			header {
+				margin:0 auto;
+				width:100%;
+				max-width:600px;
+			}
+
+			.container {
+				margin:40px auto;
+				padding:20px 0;
+				width:100%;
+				max-width:600px;
+				background: #306730;
+				color:#fff;
+				font-family: 'Indie Flower', cursive;
+			}
+
+			.numbers-container {
+				display:inline-block;
+				margin:0 auto;
+				text-align:right;
+				border-bottom:5px solid #fff;
+
+			}
+
+			.large-number {
+				font-size:70px;
+			}
+
+
+			button {
+				font-size:20px;
+				line-height:20px;
+				background:#09f;
+				border:none;
+				border-radius: 100px;
+				padding:20px 40px;
+				color:#fff;
+				cursor: pointer;
+				-webkit-appearance: none;
+			}
+
+			header button {
+				background:none;
+				color:#09f;
+				text-decoration:underline;
+				padding:20px 10px;
+			}
+
+		</style>
+	</head>
+	<body>
+
+
+		<div class="container" id="simple-addition">
+			<div class="numbers-container"></div>
+			<br/>
+			<br/>
+			<br/>
+			<button onclick="nextSimpleAdditionExercise()">Next</button>
+
+			<script>
+				function nextSimpleAdditionExercise(){
+					let numbersContainer = document.querySelector("#simple-addition .numbers-container");
+					numbersContainer.innerHTML = "<div class='large-number'>" + Math.floor( Math.random()*20+1 ) + "</div>";
+					numbersContainer.innerHTML += "<div class='large-number'>+ " + Math.floor( Math.random()*20+1 ) + "</div>";
+				}
+				nextSimpleAdditionExercise();
+			</script>
+		</div>
+
+		<div class="container" id="addition">
+			<div class="numbers-container">
+			</div>
+			<br/>
+			<br/>
+			<br/>
+			<button onclick="nextAdditionExercise()">Next</button>
+
+			<script>
+				function nextAdditionExercise(){
+					let numbersContainer = document.querySelector("#addition .numbers-container");
+					numbersContainer.innerHTML = "<div class='large-number'>" + Math.floor( Math.random()*190+10 ) + "</div>";
+					numbersContainer.innerHTML += "<div class='large-number'>+ " + Math.floor( Math.random()*190+10 ) + "</div>";
+				}
+				nextAdditionExercise();
+			</script>
+		</div>
+
+
+		<div class="container" id="add-and-subtract">
+			<div class="numbers-container">
+				<div id="add-and-subtract-part-1" class="large-number"></div>
+				<div id="add-and-subtract-part-2" class="large-number"></div>
+				<div id="add-and-subtract-part-3" class="large-number"></div>
+
+			</div>
+			<br/>
+			<br/>
+			<br/>
+			<button onclick="nextAddAndSubtractExercise()">Next</button>
+
+			<script>
+				function nextAddAndSubtractExercise(){
+					document.querySelector("#add-and-subtract-part-1").innerHTML = Math.floor( Math.random()*4390+10 );
+					document.querySelector("#add-and-subtract-part-2").innerHTML = '+ ' + Math.floor( Math.random()*4290+10 );
+					document.querySelector("#add-and-subtract-part-3").innerHTML = '- ' + Math.floor( Math.random()*2190+10 );
+				}
+
+				nextAddAndSubtractExercise();
+			</script>
+		</div>
+
+
+
+	</body>
+</html>

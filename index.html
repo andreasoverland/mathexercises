@@ -159,12 +159,7 @@
 
 
 		<div class="container" id="add-and-subtract">
-			<div class="numbers-container">
-				<div id="add-and-subtract-part-1" class="large-number"></div>
-				<div id="add-and-subtract-part-2" class="large-number"></div>
-				<div id="add-and-subtract-part-3" class="large-number"></div>
-
-			</div>
+			<div class="numbers-container"></div>
 			<br/>
 			<br/>
 			<br/>
@@ -172,9 +167,10 @@
 
 			<script>
 				function nextAddAndSubtractExercise(){
-					document.querySelector("#add-and-subtract-part-1").innerHTML = Math.floor( Math.random()*4390+10 );
-					document.querySelector("#add-and-subtract-part-2").innerHTML = '+ ' + Math.floor( Math.random()*4290+10 );
-					document.querySelector("#add-and-subtract-part-3").innerHTML = '- ' + Math.floor( Math.random()*2190+10 );
+					let numbersContainer = document.querySelector("#add-and-subtract .numbers-container");
+					numbersContainer.innerHTML = "<div class='large-number'>" + Math.floor( Math.random()*4390+10 ) + "</div>";
+					numbersContainer.innerHTML += "<div class='large-number'>+ " + Math.floor( Math.random()*4290+10 ) + "</div>";
+					numbersContainer.innerHTML += "<div class='large-number'>- " + Math.floor( Math.random()*2190+10 ) + "</div>";
 				}
 
 				nextAddAndSubtractExercise();
